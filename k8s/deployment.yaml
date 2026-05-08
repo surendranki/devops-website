@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: devops-website
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: devops-website
+  template:
+    metadata:
+      labels:
+        app: devops-website
+    spec:
+      containers:
+      - name: devops-website
+        image: 824604428027.dkr.ecr.ap-south-1.amazonaws.com/devops-website:v1
+        ports:
+        - containerPort: 80
